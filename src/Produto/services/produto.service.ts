@@ -6,10 +6,10 @@ import { CategoriaService } from '../../categoria/services/categoria.service';
 
 @Injectable()
 export class ProdutoService {
-  private categoriaService: CategoriaService;
   constructor(
     @InjectRepository(Produto)
     private produtoRepository: Repository<Produto>,
+    private categoriaService: CategoriaService,
   ) {}
 
   async findAll(): Promise<Produto[]> {
